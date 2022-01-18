@@ -1,0 +1,49 @@
+" Better command-line completion
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Display line numbers on the left
+set number
+
+"set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" mappings
+nnoremap gh  :tabfirst<CR>
+nnoremap gj  :tabnext<CR>
+nnoremap gk  :tabprev<CR>
+nnoremap gl  :tablast<CR>
+nnoremap gn  :Te<CR>
+
+"toying around trying to match a function signature given the current
+"highlight word
+"nnoremap gr /\a\+\w\+\a\+\:\:<C-R><C-W><CR>\w*\(
+
+xnoremap gr y:<c-u>!grep -rn --color "<c-r>"" src skin app <CR>
+
+" syntax highlighting support
+au BufNewFile,BufRead *.qss :set ft=css
+au BufNewFile,BufRead *.json set ft=javascript
+"au BufNewFile,BufRead TODO.txt set ft=vim
+au BufNewFile,BufRead TODO.txt set ft=ramn_todo
+
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/go/misc/vim
+filetype plugin indent on
+
+:au FileChangedShell * echo "Warning: File changed on disk"
+
+set tags=./tags;/
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+

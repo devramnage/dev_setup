@@ -1,0 +1,11 @@
+[core]
+	editor = vi
+[user]
+	email = christian.holbrook@dish.com
+	name = Christian Holbrook
+[alias]
+    st = status
+    br = branch
+    dif = diff --color=auto
+    unstage = reset HEAD --
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
