@@ -1,0 +1,51 @@
+source ~/bin/git-flow-completion.bash
+
+# MacPorts Installer addition on 2013-05-24_at_12:56:09: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Android development paths
+SDK=/Volumes/Users/christian/work/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
+NDK=/Volumes/Users/christian/work/ui/android-ndk-r6
+GOPATH=/usr/local/go
+export PATH=$PATH:$SDK:$NDK:$GOPATH
+
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+export PS1="\w \[\e[0;32m\]\$(~/bin/vcprompt -f '[%s:%b]')\[\e[m\]\$ "
+
+#standard alias
+alias ls='ls -G'
+alias ll='ls -l'
+alias la='ls -a'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+#my alias
+alias grep='grep --color=auto'
+
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+  . /opt/local/etc/profile.d/bash_completion.sh
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
+fi
+#if [ -f /Users/REPLACE-USERNAME-HERE/opt/git/completion/git-completion.bash ]; then
+    #. /Users/REPLACE-USERNAME-HERE/opt/git/completion/git-completion.bash
+#fi
+
+##
+# Your previous /Users/Holbrook/.profile file was backed up as /Users/Holbrook/.profile.macports-saved_2016-05-31_at_10:44:38
+##
+
+# MacPorts Installer addition on 2016-05-31_at_10:44:38: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# MacPorts Installer addition on 2017-02-06_at_13:22:27: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
